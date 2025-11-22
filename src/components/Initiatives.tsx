@@ -33,41 +33,42 @@ const Initiatives = () => {
   ];
 
   return (
-    <section className="py-16 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-background border-y-2 border-border">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4 md:mb-6">
             Government Initiatives
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Flagship programs driving India's growth and development
+          <div className="w-20 sm:w-24 h-1 bg-gov-saffron mx-auto mb-4 sm:mb-6"></div>
+          <p className="text-muted-foreground text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            Flagship programs driving India's economic growth and workforce development
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8 max-w-7xl mx-auto">
           {initiatives.map((initiative, index) => (
             <Card
               key={index}
-              className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-border"
+              className="group overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-border hover:border-primary/30 bg-card"
             >
-              <div className="aspect-square bg-gradient-to-br from-secondary to-background p-8 flex items-center justify-center">
+              <div className="aspect-square bg-gradient-to-br from-secondary via-background to-secondary p-6 sm:p-8 flex items-center justify-center border-b-2 border-border">
                 <img
                   src={initiative.image}
-                  alt={initiative.name}
-                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                  alt={`${initiative.name} - Government of India Initiative`}
+                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-primary transition-colors">
+              <div className="p-5 sm:p-6">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-foreground group-hover:text-primary transition-colors">
                   {initiative.name}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-muted-foreground text-sm sm:text-base mb-4 sm:mb-5 leading-relaxed">
                   {initiative.description}
                 </p>
                 <Button
                   variant="outline"
                   size="sm"
-                  className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                  className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold transition-all duration-200 py-2 sm:py-2.5"
                 >
                   Learn More
                 </Button>
